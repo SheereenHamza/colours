@@ -3,17 +3,39 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+      <View style={styles.rowDiv}>
+        <View styles={styles.colDiv}>
+          <View style={{ backgroundColor: 'red' }}>
+          </View>
+          <View style={{ backgroundColor: 'blue' }}>
+          </View>
+        </View>
+        <View styles={styles.colDiv}>
+          <View style={{ backgroundColor: 'yellow' }}>
+            <Text>Hello</Text>
+          </View>
+          <View style={{ backgroundColor: 'green' }}>
+          </View>
+        </View>
+      </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
+  rowDiv: {
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
+  colDiv: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  box: {
+    backgroundColor: "red",
+    borderWidth: 2,
+    height: '50%',
+    width: '50%'
+  }
 });
