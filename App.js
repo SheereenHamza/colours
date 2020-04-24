@@ -3,39 +3,46 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-      <View style={styles.rowDiv}>
-        <View styles={styles.colDiv}>
-          <View style={{ backgroundColor: 'red' }}>
-          </View>
-          <View style={{ backgroundColor: 'blue' }}>
-          </View>
+    <View style={styles.container}>
+      <View style={styles.colDiv}>
+        <View style={styles.rowDiv}>
+          <View style={[styles.box, { backgroundColor: 'red' }]} />
+          <View style={[styles.box, { backgroundColor: 'blue' }]} />
         </View>
-        <View styles={styles.colDiv}>
-          <View style={{ backgroundColor: 'yellow' }}>
-            <Text>Hello</Text>
-          </View>
-          <View style={{ backgroundColor: 'green' }}>
-          </View>
+        <View style={styles.rowDiv}>
+          <View style={[styles.box, { backgroundColor: 'yellow' }]} />
+          <View style={[styles.box, { backgroundColor: 'green' }]} />
         </View>
       </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: '100%',
+    minWidth: '100%'
+  },
   rowDiv: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center'
+    margin: 0,
+    minHeight: '50%'
   },
   colDiv: {
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center'
+    margin: 0,
+    minHeight: '100%',
+    minWidth: '100%'
   },
   box: {
     backgroundColor: "red",
     borderWidth: 2,
-    height: '50%',
-    width: '50%'
+    padding: 25,
+    margin: 5,
+    minWidth: '50%',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
